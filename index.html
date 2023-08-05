@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tittle  -->
+
+    <title>Portfolio-Website</title>
+    <!-- font-awesome icons link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- adding css here  -->
+    <style>
+        @font-face {
+            font-family: link-font;
+            src: url(Graphik-Light-Trial.otf);
+        }
+        
+        @font-face {
+            font-family: heading-font;
+            src: url(Philosopher-Bold.ttf);
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        section {
+            width: 100vw;
+        }
+        
+        input {
+            border: none;
+            outline: none;
+            background: none;
+        }
+        
+        a {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .link-font {
+            font-family: link-font, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: heading-font, sans-serif;
+        }
+        /* navbar */
+        
+        .navbar {
+            width: 100vw;
+            justify-content: space-around;
+            height: 56px;
+            border-bottom: 1px solid black;
+        }
+        
+        .nav-left .name {
+            font-size: 24px;
+            height: 30px;
+        }
+        
+        .nav-right a li {
+            font-size: 20px;
+            margin-right: 13px;
+        }
+        /* about section  */
+        
+        .about-section {
+            justify-content: space-around;
+            align-items: flex-start;
+            padding-top: 3vw;
+        }
+        
+        .about-left {
+            padding-left: 8vw;
+        }
+        
+        .portfolio-img {
+            width: 35vw;
+            height: calc((35vw * 4) / 3.6);
+            background-image: url(student.avif);
+            background-size: cover;
+            background-position-x: -20vw;
+            border-bottom: 7px solid white;
+            border-right: 7px solid black;
+            border-radius: 7px;
+            -webkit-box-shadow: -23px 20px 7px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -23px 20px 7px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: -23px 20px 7px 0px rgba(0, 0, 0, 0.75);
+        }
+        /* about-right  */
+        
+        .who-Im {
+            align-items: flex-start;
+            justify-content: space-around;
+            height: 28vw;
+        }
+        
+        .about-right {
+            width: 40vw;
+            padding-top: 6vw;
+            justify-content: space-between;
+            align-items: flex-start;
+            align-content: flex-start;
+        }
+        
+        .about-right .intro-line-first {
+            font-size: 7vw;
+        }
+        
+        .about-right .intro-line-second {
+            font-size: 3vw;
+            margin-left: 2px;
+            line-height: 3vw;
+        }
+        
+        .about-right .intro-line-second span {
+            color: rgb(13, 190, 221);
+        }
+        
+        .about-right p {
+            font-size: 2vw;
+            margin-left: 2px;
+            line-height: 4vw;
+        }
+        
+        .about-right .hey-img {
+            background-image: url(hey.jpg);
+            width: 6vw;
+            height: 6vw;
+            background-size: cover;
+            margin-left: 10px;
+        }
+        
+        .my-resume {
+            width: 10vw;
+            height: 4vw;
+            border: 1px solid black;
+            border-radius: 0.6vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2vw;
+            cursor: pointer;
+            background-color: rgb(13, 190, 221);
+            color: white;
+        }
+        
+        .my-resume:hover {
+            background: none;
+            color: black;
+        }
+        
+        .about-section {
+            padding-bottom: 50px;
+        }
+        /* projects section  */
+        
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 1vw;
+            padding: 1.2vw;
+        }
+        
+        .gird-items {
+            border: 1px solid black;
+            border-radius: 7px;
+            width: 30vw;
+            height: calc((25vw * 4) / 3.5);
+            padding: 3px 13px;
+            text-align: center;
+            justify-content: space-evenly;
+        }
+        
+        .project-name {
+            color: black;
+            font-size: 2.8vw;
+        }
+        
+        .project-description {
+            font-size: 1.8vw;
+        }
+        
+        .project-btn {
+            width: 10vw;
+            height: 3.5vw;
+            font-size: 2vw;
+            border: 1px solid black;
+            padding: 1px 3px;
+            border-radius: 0.5vw;
+            color: white;
+            background-color: rgb(13, 190, 221);
+        }
+        
+        .project-btn:hover {
+            color: black;
+            background-color: white;
+        }
+        
+        .project-section {
+            width: 100vw;
+            padding: 1vw 0;
+        }
+        
+        .project-section .headline {
+            text-align: center;
+            font-size: 3.2vw;
+            padding: 1vw;
+            background: rgb(255, 255, 255);
+            box-shadow: 0 20px -15px rgb(168, 160, 160);
+        }
+        
+        .project-section .headline h2 {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .footer {
+            width: 100vw;
+            justify-content: center;
+            height: 30vw;
+            background-color: rgb(13, 190, 221);
+        }
+        
+        .footer i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 3.5vw;
+            width: 6vw;
+            height: 6vw;
+            text-align: center;
+            border-radius: 0.8vw;
+            background-color: white;
+            color: rgb(13, 190, 221);
+            font-size: 5vw;
+        }
+        
+        .footer i:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            object-fit: cover;
+        }
+        
+        @media (max-width:470px) {
+            .nav-right a li {
+                font-size: 15px;
+                margin-right: 5px;
+            }
+            .nav-left .name {
+                font-size: 18px;
+            }
+        }
+        
+        .space {
+            width: 100vw;
+            height: 13vw;
+            background-color: white;
+            border-top: 1px solid black;
+        }
+        
+        .project-section .headline {
+            background-color: rgb(13, 190, 221);
+            height: 10vw;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .know-me {
+            background-color: rgb(13, 190, 221);
+            width: 100vw;
+            padding: 1vw 3vw;
+            height: fit-content;
+            padding-bottom: 3vw;
+        }
+        
+        .know-me-heading {
+            font-size: 5vw;
+            height: 8vw;
+        }
+        
+        .know-me-description {
+            font-size: 1.5vw;
+            padding: 2vw;
+            display: flex;
+            text-align: left;
+            align-items: flex-start;
+            border: 1px solid black;
+            border-radius: 0.8vw;
+            line-height: 2.2vw;
+            letter-spacing: 0.1vw;
+            font-family: link-font, sans-serif;
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- No-(1)  #headers  -->
+
+    <nav class="navbar flex-row">
+        <div class="nav-childs nav-left">
+            <a href="" class="name heading-font">Ravi Sinhmar</a>
+        </div>
+        <div class="flex-row nav-childs nav-right">
+            <ul class="nav-right-ul flex-row link-font">
+                <a href="" class="home">
+                    <li>Home</li>
+                </a>
+                <a href="" class="home">
+                    <li>About</li>
+                </a>
+                <a href="" class="home">
+                    <li>Projects</li>
+                </a>
+                <a href="" class="home">
+                    <li>Contact</li>
+                </a>
+            </ul>
+
+        </div>
+
+
+    </nav>
+
+    <section class="about-section flex-row">
+        <div class="about-left flex-column">
+            <div class="portfolio-img">
+            </div>
+
+        </div>
+
+        <div class="who-Im flex-column">
+            <div class="about-right flex-column">
+                <div class="intro flex-row">
+                    <h1 class="intro-line-first heading-font">Hey folks</h1>
+                    <div class="hey-img">
+                    </div>
+                </div>
+                <h3 class="intro-line-second heading-font">
+                    here is <span class="name-span">Ravi Sinhmar</span>
+                </h3>
+                <p class="link-font">a web developer</p>
+            </div>
+
+            <a class="my-resume link-font" href="resume.pdf" download="">Resume</a>
+
+        </div>
+    </section>
+
+
+
+    <!-- No-(2)  #section education  -->
+    <section class="know-me flex-column">
+        <div class="know-me-heading heading-font">Know about me</div>
+        <div class="know-me-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil aperiam aspernatur dolor odio, provident placeat officiis laborum aut quisquam, soluta perferendis? Deserunt ipsum aspernatur omnis rerum praesentium tenetur eaque atque.Lorem ipsum, dolor
+            sit amet consectetur adipisicing elit. Nihil aperiam aspernatur dolor odio, provident placeat officiis laborum aut quisquam, soluta perferendis? Deserunt ipsum aspernatur omnis rerum praesentium tenetur eaque atque.
+        </div>
+    </section>
+
+    <!-- space section  -->
+    <section class="space">
+
+    </section>
+    <!-- No-(3)  #section Projects  -->
+    <section class="project-section">
+        <div class="headline heading-font">
+            <h2>
+                Awards and Projects
+            </h2>
+        </div>
+        <div class="projects">
+            <div class="grid-itme1 gird-items flex-column">
+                <div class="project-name heading-font">Women Safety Device</div>
+                <div class="project-description link-font">
+                    I worked on a Hardware. I want to design the smallest and safest watch to reduce crimes against women in the world
+                </div>
+                <a href="" class="project-btn link-font">
+                    Check it
+                </a>
+
+            </div>
+            <div class="grid-itme2 gird-items flex-column">
+                <div class="project-name heading-font">Women Safety Device</div>
+                <div class="project-description link-font">
+                    I worked on a Hardware. I want to design the smallest and safest watch to reduce crimes against women in the world
+                </div>
+                <a href="" class="project-btn link-font">
+                    Check it
+                </a>
+
+            </div>
+            <div class="grid-itme3 gird-items flex-column">
+                <div class="project-name heading-font">Women Safety Device</div>
+                <div class="project-description link-font">
+                    I worked on a Hardware. I want to design the smallest and safest watch to reduce crimes against women in the world
+                </div>
+                <a href="" class="project-btn link-font">
+                    Check it
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="space">
+
+    </section>
+
+    <!-- footer section  -->
+    <section class="footer flex-row ">
+        <div class="flex-row" style="color: black; font-size: 30px;">
+            <i class="fa fa-envelope"></i>
+            <!-- Email icon -->
+            <i class="fa fa-instagram"></i>
+            <!-- Instagram icon -->
+            <i class="fa fa-facebook"></i>
+            <!-- Facebook icon -->
+            <i class="fa fa-youtube-play"></i>
+            <!-- YouTube icon -->
+            <i class="fa fa-linkedin-square"></i>
+
+
+        </div>
+    </section>
+
+</body>
+
+</html>
